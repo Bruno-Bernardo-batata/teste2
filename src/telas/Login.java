@@ -65,6 +65,11 @@ public class Login extends javax.swing.JFrame {
         Cadastrar.setFont(new java.awt.Font("Tahoma", 0, 9)); // NOI18N
         Cadastrar.setText("Cadastrar");
         Cadastrar.setToolTipText("Cadastrar");
+        Cadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CadastrarActionPerformed(evt);
+            }
+        });
 
         jPasswordFieldSenhaUsuario.setText("123456");
         jPasswordFieldSenhaUsuario.setToolTipText("Senha");
@@ -124,16 +129,25 @@ public class Login extends javax.swing.JFrame {
         usu.setSenha(jPasswordFieldSenhaUsuario.getText());
         usu.setId_usuario(usudao.getId_usuario(usu.getLogin(),usu.getSenha()));
         if(usudao.verificaLogin(usu) == true){
-            /*java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-            new CadastroUsuario().setVisible(true);
-            }
-            });
             this.dispose();
-            }*/
-        System.err.println("deu certo");}else{System.err.println("deu errado");}
+            java.awt.EventQueue.invokeLater(new Runnable() {
+                public void run() {
+                    new CadastroUsuario().setVisible(true);
+                }
+            });
+        System.err.println("deu certo");
+        }else{
+        System.err.println("deu errado");}
     }//GEN-LAST:event_jButtonEntrarActionPerformed
 
+    private void CadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastrarActionPerformed
+        this.dispose();
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new CadastroUsuario().setVisible(true);
+            }
+        });
+    }//GEN-LAST:event_CadastrarActionPerformed
     /**
      * @param args the command line arguments
      */
