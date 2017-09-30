@@ -132,7 +132,7 @@ public class Login extends javax.swing.JFrame {
             this.dispose();
             java.awt.EventQueue.invokeLater(new Runnable() {
                 public void run() {
-                    new CadastroUsuario().setVisible(true);
+                    new Sistema().setVisible(true);
                 }
             });
         System.err.println("deu certo");
